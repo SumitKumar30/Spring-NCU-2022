@@ -8,6 +8,11 @@
 <title>User Input Form</title>
 </head>
 <body>
+
+	<h2> Aadhar Verification Registration Form </h2>
+	
+	<hr> <br>
+	
 	<form:form action="processForm" method="post" modelAttribute="user">
 	
 	<label for="name">User Name</label>
@@ -25,6 +30,15 @@
 		<form:options items="${user.stateOptions}"/>
 		
 	</form:select> <br><br><br>
+	<label>Gender: </label>
+	<form:radiobuttons path="gender" items="${user.genderOptions}"/> 
+	
+	<br><br>
+	<label>Other Verification Options: </label> 
+	<form:checkboxes path = "others" items="${user.otherOptions}" /> <br> <br>
+	
+	<label>Address Details</label><br>
+	<form:textarea path="address" rows="5" cols="30" /> <br> <br> 
 	
 	<input type="submit" value="submit" />
 		
