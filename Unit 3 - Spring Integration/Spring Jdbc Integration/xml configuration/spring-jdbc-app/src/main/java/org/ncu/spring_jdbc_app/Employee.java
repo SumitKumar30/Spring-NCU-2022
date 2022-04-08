@@ -1,6 +1,10 @@
 package org.ncu.spring_jdbc_app;
 
 public class Employee {
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + ", salaary=" + salaary + ", address=" + address + "]";
+	}
 	private int id;
 	private String name;
 	private int salaary;
