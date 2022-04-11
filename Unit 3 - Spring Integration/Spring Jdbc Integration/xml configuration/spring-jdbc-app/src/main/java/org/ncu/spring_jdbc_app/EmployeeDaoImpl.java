@@ -1,5 +1,6 @@
 package org.ncu.spring_jdbc_app;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -44,7 +45,32 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		
 		/* jdbcTemplate.queryForObject(sql, requiredType, args) */
 		// TODO Auto-generated method stub
-		return null;
+		String query = "select * from employee where employee_id = ?";
+		RowMapper<Employee> rowMapper = new EmployeeRowMapper();
+		Employee emp = jdbcTemplate.queryForObject(query, rowMapper, id);
+		return emp;
+	}
+	@Override
+	public boolean deleteAllRecords() {
+		// TODO Auto-generated method stub
+		String query = "truncate table employee";
+//		jdbcTemplate.update(query);
+		jdbcTemplate.execute(query);
+		return false;
+	}
+	@Override
+	public void insertBatchRecords(List<Employee> employees) {
+		// TODO Auto-generated method stub
+		String query = "insert into employee values (?, ?, ?, ?)";
+		List<Object[]> batchArgs = new ArrayList<>();
+		
+		for(Employee emp : employees) {
+			Object[] args = {emp.getId(), emp.getName(), emp.getSalaary(), emp.getAddress()};
+			batchArgs.add(args);
+		}
+		
+		jdbcTemplate.batchUpdate(query, batchArgs);
+		/* System.out.println("Batch insertion successfull!"); */
 	}
 
 }

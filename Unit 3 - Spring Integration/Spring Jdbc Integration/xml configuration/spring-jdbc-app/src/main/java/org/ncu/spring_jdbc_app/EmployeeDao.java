@@ -18,4 +18,10 @@ public interface EmployeeDao {
 	
 	// method to fetch a record by id
 	public Employee fetchRecordById(int id);
+	
+	// remove all the table records
+	public boolean deleteAllRecords();
+	
+	// batch insertion
+	public void insertBatchRecords(List<Employee> employees);
 }
