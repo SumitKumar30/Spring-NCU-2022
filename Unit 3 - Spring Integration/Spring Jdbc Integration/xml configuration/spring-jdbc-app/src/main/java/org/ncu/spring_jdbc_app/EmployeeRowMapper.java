@@ -11,10 +11,10 @@ public class EmployeeRowMapper implements RowMapper<Employee> {
 	public Employee mapRow(ResultSet rs, int rowNum) throws SQLException {
 		// TODO Auto-generated method stub
 		Employee employee = new Employee();
-		employee.setId(rs.getInt("employee_id"));
-		employee.setName(rs.getString("employee_name"));
-		employee.setSalaary(rs.getInt("employee_salary"));
-		employee.setAddress(rs.getString("employee_address"));
+		employee.setEmployee_id(rs.getInt("employee_id"));
+		employee.setEmployee_name(rs.getString("employee_name"));
+		employee.setEmployee_salary(rs.getInt("employee_salary"));
+		employee.setEmployee_address(rs.getString("employee_address"));
 		
 		return employee;
 	}

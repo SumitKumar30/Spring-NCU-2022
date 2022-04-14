@@ -24,4 +24,7 @@ public interface EmployeeDao {
 	
 	// batch insertion
 	public void insertBatchRecords(List<Employee> employees);
+	
+	// method for fetching records with same name
+	public List<Employee> fetchRecordByName(String name);
 }

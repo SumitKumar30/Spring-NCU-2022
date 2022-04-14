@@ -1,37 +1,41 @@
 package org.ncu.spring_jdbc_app;
 
 public class Employee {
+	
+	
+	private int employee_id;
+	private String employee_name;
+	private int employee_salary;
+	private String employee_address;
+	
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", salaary=" + salaary + ", address=" + address + "]";
+		return "Employee [employee_id=" + employee_id + ", employee_name=" + employee_name + ", employee_salary="
+				+ employee_salary + ", employee_address=" + employee_address + "]";
 	}
-	private int id;
-	private String name;
-	private int salaary;
-	private String address;
-	public int getId() {
-		return id;
+	public int getEmployee_id() {
+		return employee_id;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setEmployee_id(int employee_id) {
+		this.employee_id = employee_id;
 	}
-	public String getName() {
-		return name;
+	public String getEmployee_name() {
+		return employee_name;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setEmployee_name(String employee_name) {
+		this.employee_name = employee_name;
 	}
-	public int getSalaary() {
-		return salaary;
+	public String getEmployee_address() {
+		return employee_address;
 	}
-	public void setSalaary(int salaary) {
-		this.salaary = salaary;
+	public void setEmployee_address(String employee_address) {
+		this.employee_address = employee_address;
 	}
-	public String getAddress() {
-		return address;
+	public int getEmployee_salary() {
+		return employee_salary;
 	}
-	public void setAddress(String address) {
-		this.address = address;
+	public void setEmployee_salary(int employee_salary) {
+		this.employee_salary = employee_salary;
 	}
 	
 }
