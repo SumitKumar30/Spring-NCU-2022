@@ -21,6 +21,8 @@ public class StudentDAOImpl implements StudentDAO {
 		studentList = jdbcTemplate.query(query, new StudentRowMapper());
 		return studentList;
 	}
+	
+	
 	@Override
 	public int createRecord(Student std) {
 		// TODO Auto-generated method stub
@@ -28,6 +30,33 @@ public class StudentDAOImpl implements StudentDAO {
 		Object records[] = { std.getStudentId(), std.getStudentName(), std.getStudentAddress() };
 		int recordInserted = jdbcTemplate.update(query, records);
 		return recordInserted;
+	}
+	
+	
+	@Override
+	public int updateRecord(Student std) {
+		// TODO Auto-generated method stub
+		String sql = "update student set student_name = ?, student_address = ? where student_id = ?";
+		Object[] args = {std.getStudentName(), std.getStudentAddress(), std.getStudentId()};
+		int recordsUpdated = jdbcTemplate.update(sql, args);
+		return recordsUpdated;
+	}
+	@Override
+	public Student getStudent(int id) {
+		// TODO Auto-generated method stub
+		String sql = "select * from student where student_id = ?";
+		
+		Student student = jdbcTemplate.queryForObject(sql, new StudentRowMapper(), id);
+		
+		return student;
+	}
+
+
+	@Override
+	public void deleteStudent(int id) {
+		// TODO Auto-generated method stub
+		String sql = "delete from student where student_id = ?";
+		jdbcTemplate.update(sql, id);
 	}
 
 }

@@ -11,6 +11,8 @@
 <body>
 	<h1 align="center">Student Dashboard</h1>
 	<i>Students data coming soon...</i>
+	
+	<%-- ${students} --%>
 	<br>
 	<div align="center">
 	<%-- ${students} --%>
@@ -31,11 +33,14 @@
 				<td>${student.studentId }</td>
 				<td>${student.studentName }</td>
 				<td>${student.studentAddress }</td>
-				<td>coming soon..</td>
+				<td>
+				<a href = "updateForm?stuId=${student.studentId}" >Edit</a>
+				<a href = "deleteStudent?stuId=${student.studentId}" onclick = "if (!(confirm('Do you really want to delete this student record?'))) return false">Delete</a>
+				</td>
 			</tr>
 		</c:forEach>
 
-	</table>
+	</table> 
 	</div>
 </body>
 </html>

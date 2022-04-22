@@ -7,7 +7,9 @@
 <title>Confirmation Page</title>
 </head>
 <body>
-	<h1 align="center">Record added successfully!!</h1> <br>
+<hr>
+	<h1 align="center">Record added/updated successfully!!</h1> <br>
 	<a href = "/spring-mvc-jdbc" >Take me back to the home page!</a>
+<hr>
 </body>
 </html>

@@ -1,23 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Student Input Form</title>
+<title>Update Form</title>
 </head>
 <body>
-	<div align="center">
+<div align="center">
 
-		<h2>Student Input Form</h2>
+		<h2>Student Update Form</h2>
 		<br>
 		<hr>
 
-		<form:form action="processForm" method="post" modelAttribute="student">
+		<form:form action="processUpdate" method="post" modelAttribute="student">
 
 			<label for="id">Student ID</label>
-			<form:input type="text" path="studentId" />
+			<form:input type="text" path="studentId" readonly="true"/>
 			<br>
 			<br>
 
